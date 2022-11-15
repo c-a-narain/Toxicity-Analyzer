@@ -18,5 +18,3 @@
 ## :muscle: Inspiração
 
 Bootcamp Javascript Game Developer from Digital Innovation One
-
-# hi
