@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css" />
     <title>Toxicity Detector</title>
     <script type="text/javascript" src="result.json"></script>
-    <script type = "text/javascript" src="javascript.js"></script>  
+    <script defer type="text/javascript" src="javascript.js"></script>
 </head>
+
 <body>
     <h1 style="color:white; margin:20px;">Social Media Toxicity Detector</h1>
 
@@ -17,18 +19,18 @@
         <section id="auth" class="flex direction-column">
             <div class="panel login flex direction-column">
                 <h1>Toxicity Detector</h1>
-                
-                <form  onclick = "myfunction()">
+
+                <form action = "http://localhost:5000/login" method = "post">
                     <label for="email" class="sr-only">Enter the user id</label>
                     <input name="email" placeholder="Enter the user id" />
 
+                    <label for="number" class="sr-only">Enter the no. of tweets</label>
+                    <input name="number" placeholder="Enter the no. of tweets" />
                     <button type="submit">Search</button>
                 </form>
             </div>
         </section>
     </main>
-
-    <input type='file' accept='text/plain' onchange='openFile(event)'><br>
-    <div id='output'>
 </body>
+
 </html>

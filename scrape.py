@@ -1,6 +1,6 @@
 import snscrape.modules.twitter as twitterScraper;
 import json;
-import webbrowser;
+
 
 name=input("Enter user name:")
 n=int(input("Enter the number of tweets to retrive:"))
@@ -95,7 +95,7 @@ result_file.write(json_res)
 tweets_file.close()
 dataset_file.close()
 result_file.close()
-print ("content-type: text/html")
-webbrowser.open('index.html') 
+# print ("content-type: text/html")
+# webbrowser.open('index.html') 
 
 #hello tiru
