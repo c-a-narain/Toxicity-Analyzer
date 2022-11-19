@@ -1,3 +1,4 @@
+from os import sendfile
 import snscrape.modules.twitter as twitterScraper;
 import json;
 
@@ -14,13 +15,15 @@ def success(name: str):
 	
 	l = en[1].split("<br>")
 	empty = ""
-	for i in l[0:-2]:
+	for i in l[0:-1]:
 		empty += "<tr>"
 		empty += "<th>" + i.split(":")[0] + "</th>"
+		empty += "<th>:</th>"
 		empty += "<td>" + i.split(":")[1] + "</td>"
 		empty += "</tr>"
 		empty += "\n"
 
+	# print(empty)
 	html = '''
 	<!DOCTYPE html>
 		<head>
@@ -33,18 +36,22 @@ def success(name: str):
 			<center>
 				<h1 >Social Media Toxicity Detector</h1> 
 				<table>
-					<tr><td>Username:</td><td>%s</td></tr>
-					<tr><td>No. of tweets:</td><td>%s</td></tr>
-				</table>
-				<table border="2">
+					<tr><th>Username</th><th>:</th><td>%s</td></tr>
+					<tr><th>No. of tweets</th><th>:</th><td>%s</td></tr>
+				</table><br><br>
+				<table class="t1">
 					%s
 				</table>
 			</center>
-			<
+			
 		</body>
 		<style>
 			body {
 				background-color: #f2e19b;
+				font-size: 30px;
+			}
+			.t1{
+				border:5px black solid;
 			}
 		</style>
 	</html>
@@ -112,6 +119,7 @@ def login():
 	result_file.close()
 	return redirect(url_for('success', name=string))
 
-
+if __name__ == '__main__':
+    app.run(port=5000,debug=True) 
 if __name__ == '__main__':
 	app.run(debug=True)
