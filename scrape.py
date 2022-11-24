@@ -75,7 +75,7 @@ for k in dataset_data['general_words']:
         general_swear_words = general_swear_words + k + ","
 for k in dataset_data['religious_words']:
     if k in all_tweet_contents:
-        # print("Religious swear word(s) found is/are : "+k)
+        # print("Religious swear word(hello tirugnanams) found is/are : "+k)
         total_swear_words = total_swear_words + k + ","
         religious_swear_words = religious_swear_words + k + ","
 for k in dataset_data['women_words']:
